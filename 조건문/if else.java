@@ -10,6 +10,7 @@ public class sample01 {
 		
 		Scanner scanner = new Scanner(System.in);
 		
+		int passCount = 0;
 		String rapper1;
 		String rapper2;
 		String rapper3;
@@ -25,17 +26,28 @@ public class sample01 {
 		System.out.println("심사위원4의 평가 입력");
 		rapper4 = scanner.next();
 		
-		if (rapper1.equals("pass") && rapper2.equals("pass") && rapper3.equals("pass") && rapper4.equals("pass")) {
-			System.out.println(" all pass !!! ");
+		if (rapper1.equals("pass")) {
+			passCount += 1;
 		}
 		
-		else if (rapper1.equals("pass") || rapper2.equals("pass") || rapper3.equals("pass") || rapper4.equals("pass")) {
-			System.out.println(" pass !!! ");
+		if (rapper2.equals("pass")) {
+			passCount += 1;
 		}
 		
-		else {
-			System.out.println(" 불구덩이 !!! ");
+		if (rapper3.equals("pass")) {
+			passCount += 1;
+		}
+		
+		if (rapper4.equals("pass")) {
+			passCount += 1;
+		}
+		
+		if (passCount == 4) {
+			System.out.println("all pass!!!");
+		} else if (4 > passCount && passCount > 0) {
+			System.out.println("pass");
+		} else {
+			System.out.println("fail");
 		}
 	}
 	
-}
